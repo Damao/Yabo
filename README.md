@@ -22,7 +22,7 @@ Yabo
 例如
 	Settings > External Tools
 
-	"Program":"script.exe",
+	"Program":"wscript.exe",
 	"Parameters":"E:\Dropbox\Code\Yabo.js E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FilePath$ $FileNameWithoutExtension$.min.$FileExt$ $FileName$",
 	"Working directory":"$FileDir$"
 
