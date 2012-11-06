@@ -33,6 +33,8 @@ Yabo
 
 就会在同目录下生成当前文件.min.css
 
+[图文教程演示](http://ooxx.me/yabo.orz)
+
 ###运行环境
 目前是 JScript 写的,只能运行在 windows 下
 
