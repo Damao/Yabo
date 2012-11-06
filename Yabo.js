@@ -4,7 +4,7 @@
  Intellij IDEA / PHPStorm / WebStrom
  Settings > External Tools >
  {
- "Program":"script.exe",
+ "Program":"wscript.exe",
  "Parameters":"E:\Dropbox\Code\Yabo.js $FilePath$ E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FileNameWithoutExtension$.min.$FileExt$ $FileName$",
  "Working directory":"$FileDir$"
  }
