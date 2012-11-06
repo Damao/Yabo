@@ -5,7 +5,7 @@
  Settings > External Tools >
  {
  "Program":"wscript.exe",
- "Parameters":"E:\Dropbox\Code\Yabo.js $FilePath$ E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FileNameWithoutExtension$.min.$FileExt$ $FileName$",
+ "Parameters":"E:\Dropbox\Code\Yabo\Yabo.js E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FilePath$ $FileNameWithoutExtension$.min.$FileExt$ $FileName$",
  "Working directory":"$FileDir$"
  }
 
