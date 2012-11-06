@@ -9,7 +9,7 @@
  "Working directory":"$FileDir$"
  }
 
- replace combo.js & yuicompressor-VARpre.jar to your path;
+ replace combo.js & yuicompressor-VARpre.jar with your path;
  */
 
 var fso = new ActiveXObject("Scripting.FileSystemObject");
@@ -48,8 +48,8 @@ var fileSourceContent = getFileContent(strFilePath);
 var arrayImportFileList = fileSourceContent.match(/@import url\("?.*?\.css"?\)/g);
 if (arrayImportFileList != null) {
     for (var i = 0; i < arrayImportFileList.length; i++) {
-        var _tmp = arrayImportFileList[i];
-        strCombo += getFileContent(_tmp.replace(/@import url\("?(.*?\.css)"?\)/g, "$1"));
+        arrayImportFileList[i] = arrayImportFileList[i].replace(/@import url\("?(.*?\.css)"?\)/g, "$1");
+        strCombo += getFileContent(arrayImportFileList[i]);
     }
 }
 
