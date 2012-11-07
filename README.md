@@ -23,7 +23,7 @@ Yabo
 	Settings > External Tools
 
 	"Program":"wscript.exe",
-	"Parameters":"E:\Dropbox\Code\Yabo\Yabo.js E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FilePath$ $FileNameWithoutExtension$.min.$FileExt$ $FileName$",
+	"Parameters":"E:\Dropbox\Code\Yabo\Yabo.js E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FilePath$ $FileName$",
 	"Working directory":"$FileDir$"
 
 要改的就是 Yabo.js 和 yuicompressor.jar 的路径
