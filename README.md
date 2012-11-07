@@ -13,6 +13,9 @@ Yabo
 ###功能点
 * 无需单独的合并列表文件,直接读取 CSS 里的 @import 文件合并
 * 合并后自动调用 YUI Compressor 进行压缩,生成 文件名.min.css
+* 给图片自动加时间戳
+* filename.source.css 拖进去 出来 filename.css
+* filename.css 拖进去 出来 filename.min.css
 
 ###安装
 1. 下载 [YUI Compressor](https://github.com/yui/yuicompressor)
