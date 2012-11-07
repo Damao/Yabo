@@ -1,0 +1,6 @@
+@import url("m.css");
+@import url("../mod1/mod1.css");
+@import url("../mod2/mod2.css");
+@import url("../root.css");
+
+.body_style{font-size: 20px; background: blue;}
