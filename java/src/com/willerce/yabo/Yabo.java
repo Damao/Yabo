@@ -36,7 +36,7 @@ public class Yabo {
             }
 
             //根目录
-            String rootPath = "";
+            String rootPath;
 
             //原CSS文件路径
             String filePath = (String) parser.getOptionValue(fileOpt);
@@ -63,7 +63,7 @@ public class Yabo {
                 StringBuffer sb = new StringBuffer();
                 FileReader reader = new FileReader(filePath);
                 BufferedReader br = new BufferedReader(reader);
-                String line = null;
+                String line;
                 while ((line = br.readLine()) != null) {
                     if (line.matches("@import url\\(\"?(.*?\\.css)\"?\\);?")) {//是一个import
                         String importCssPath = line.replaceFirst("@import url\\(\"?(.*?\\.css)\"?\\);?", "$1");
@@ -101,12 +101,12 @@ public class Yabo {
 
     private static void usage() {
         System.err.println(
-                "Yabo Version: 1.0\n"
-                + "\nUsage: java -jar yabo-1.0.jar -f [input file]\n"
+                "\nYabo Version: 1.0\n"
+                + "Usage: java -jar yabo-1.0.jar -f [input file]\n"
                 + "\n"
-                + "Global Options\n"
+                + "Options\n"
                 + "  -V, --version             Print version information\n"
                 + "  -h, --help                Displays this information\n"
-                + "  -f css file path      Input CSS file absolute path\n");
+                + "  -f css file path          Input CSS file absolute path\n");
     }
 }
