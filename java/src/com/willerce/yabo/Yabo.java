@@ -52,7 +52,7 @@ public class Yabo {
             }
 
             //设置压缩合并后的保存路径，根目录/文件名.min.css
-            String outputPath = rootPath + Util.trimExtension(file.getName()) +".yabo.css";
+            String outputPath = rootPath + Util.trimExtension(file.getName()) +".min.css";
 
             //判断文件后缀
             if (!"css".equals(Util.getExtension(file))) {

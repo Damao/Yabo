@@ -1,0 +1,13 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+.idea
+*.iml
+*.min.js
+out
