@@ -45,18 +45,18 @@ JAR 需要 JAVA 环境支持，请确保已经安装好JDK，在命令行中可�
 
 参数说明：
 
-  -h --help 显示帮助
-  -f --file CSS文件，允许绝对路径或JAR包的相对路径。压缩后以 文件名.min.css 保存
+    -h --help 显示帮助
+    -f --file CSS文件，允许绝对路径或JAR包的相对路径。压缩后以 文件名.min.css 保存
 
 在命令行中运行，例：
 
-  java -jar yabo-1.0.jar style.css
+    java -jar yabo-1.0.jar style.css
 
 IDEA中的配置
 
-  "Program":"$JDKPath$\bin\java.exe",
-	"Parameters":"-jar yabo-1.0.jar -f $FilePath$",
-	"Working directory":"E:\dropbox\code\Yabo\java\build\"
+    "Program":"$JDKPath$\bin\java.exe",
+    "Parameters":"-jar yabo-1.0.jar -f $FilePath$",
+    "Working directory":"E:\dropbox\code\Yabo\java\build\"
 
 目前 jar 版与 jscript 在细节处理上还有一些差别，以后会保持一致。
 
