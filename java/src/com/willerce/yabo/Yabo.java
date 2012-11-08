@@ -96,18 +96,17 @@ public class Yabo {
     }
 
     private static void version() {
-        System.err.println("@VERSION@");
+        System.err.println("1.0");
     }
 
     private static void usage() {
         System.err.println(
-                "Yabo Version: @VERSION@\n"
-                        + "\nUsage: java -jar yuicompressor-@VERSION@.jar [options] [input file]\n"
-                        + "\n"
-                        + "Global Options\n"
-                        + "  -V, --version             Print version information\n"
-                        + "  -h, --help                Displays this information\n"
-                        + "  -f css file abs path      Input CSS file absolute path\n"
-                        + "  -o output abs path        Output Combo CSS file absolute path.\n");
+                "Yabo Version: 1.0\n"
+                + "\nUsage: java -jar yabo-1.0.jar -f [input file]\n"
+                + "\n"
+                + "Global Options\n"
+                + "  -V, --version             Print version information\n"
+                + "  -h, --help                Displays this information\n"
+                + "  -f css file path      Input CSS file absolute path\n");
     }
 }
