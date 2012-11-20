@@ -1,0 +1,17 @@
+/*
+导入用的相邻文件
+多行注释
+*/
+.sibling{
+    *font-size: 18px;
+}/*括号后面的注释*/
+/*单行的注释*/
+.after_single_comment{
+    display:inline-block\9;
+    _color:blue;
+}
+/*单行的注释*中文*/
+.last{
+    background:orange url(http://ooxx.me/me.jpg) no-repeat;
+    background-size:100%;
+}

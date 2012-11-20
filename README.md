@@ -1,7 +1,11 @@
 Yabo
 ====
 
-鸭脖(压缩 &amp;&amp; Combo )
+鸭脖 ( CSS 压缩 &amp;&amp; Combo )
+
+###Version
+* 12.11.20 集成 YUI compressor|修正中文编码问题
+* 12.11.19 增加图片时间戳开关
 
 ###前世今生
 [Ycombo](https://github.com/nqdeng/YCombo) 可以合并 CSS / JavaScript 并且基于 [YUI Compressor](https://github.com/yui/yuicompressor) 压缩
@@ -12,24 +16,23 @@ Yabo
 
 ###功能点
 * 无需单独的合并列表文件,直接读取 CSS 里的 @import 文件合并
-* 合并后自动调用 YUI Compressor 进行压缩,生成 文件名.min.css
-* 给图片自动加时间戳
-* filename.source.css 拖进去 出来 filename.css
-* filename.css 拖进去 出来 filename.min.css
+* 合并后自动调用 YUI Compressor 进行压缩,filename.source.css 进去 出来 filename.css || filename.css 进去 出来 filename.min.css
+* 给图片加时间戳, 包含关键词 Yabo_img_timestamp_off 来关闭此功能
+* 给文件结尾加时间戳
+
 
 ###安装
-1. 下载 [YUI Compressor](https://github.com/yui/yuicompressor)
-2. 下载 [Yabo](https://github.com/damao/Yabo/downloads)
-3. 编辑器里配置外部工具,这里用 [Intellij IDEA](https://github.com/damao/Intellij-IDEA-F2E) 举例,当然同样适用于 PHPStorm 和其他支持传参的编辑器
+1. 下载 [Yabo](https://github.com/damao/Yabo/downloads)
+2. 编辑器里配置外部工具,这里用 [Intellij IDEA](https://github.com/damao/Intellij-IDEA-F2E) 举例,当然同样适用于 PHPStorm 和其他支持传参的编辑器
 
 例如
 	Settings > External Tools
 
-	"Program":"wscript.exe",
-	"Parameters":"E:\Dropbox\Code\Yabo\jScript\Yabo.js E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FilePath$ $FileName$",
+	"Program":"wscript",
+	"Parameters":"*E:\Dropbox\Code\Yabo\jScript\Yabo.js* $FilePath$ $FileName$",
 	"Working directory":"$FileDir$"
 
-要改的就是 Yabo.js 和 yuicompressor.jar 的路径
+要改的就是 Yabo.js 的路径
 
 ###使用
 在需要压缩的 CSS 文件内右键选择 Yabo.js
@@ -64,4 +67,5 @@ IDEA中的配置
 目前 jar 版与 jscript 在细节处理上还有一些差别，以后会保持一致。
 
 ###todo
-目录遍历压缩功能还木实现
+* 目录遍历压缩功能还木实现
+* 不支持JS合并(貌似也没好办法搞)
