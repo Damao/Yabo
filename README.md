@@ -29,7 +29,7 @@ Yabo
 	Settings > External Tools
 
 	"Program":"wscript",
-	"Parameters":"*E:\Dropbox\Code\Yabo\jScript\Yabo.js* $FilePath$ $FileName$",
+	"Parameters":"*E:\Dropbox\Code\Yabo\JScript\Yabo.js* $FilePath$ $FileName$",
 	"Working directory":"$FileDir$"
 
 要改的就是 Yabo.js 的路径
@@ -64,7 +64,7 @@ IDEA中的配置
     "Parameters":"-jar yabo-1.0.jar -f $FilePath$",
     "Working directory":"E:\dropbox\code\Yabo\java\build\"
 
-目前 jar 版与 jscript 在细节处理上还有一些差别，以后会保持一致。
+目前 jar 版与 JScript 在细节处理上还有一些差别，以后会保持一致。
 
 ###todo
 * 目录遍历压缩功能还木实现
