@@ -86,11 +86,11 @@ if (arrayImportFileList != null) {
 }
 
 strCombo += fileSourceContent.replace(/@import.*?;/g, "");
-WScript.Echo(Yabo_img_timestamp);
+
 if(fileSourceContent.match(/Yabo_img_timestamp_off/g)){
     Yabo_img_timestamp=false;
 }
-WScript.Echo(Yabo_img_timestamp);
+
 if(Yabo_img_timestamp){
     strCombo = strCombo.replace(regex_timestamp, ".$1?" + timestamp);
 }

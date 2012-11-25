@@ -29,7 +29,7 @@ Yabo
 	Settings > External Tools
 
 	"Program":"wscript",
-	"Parameters":"E:\Dropbox\Code\Yabo\JScript\Yabo.js $FilePath$ $FileName$",
+	"Parameters":"E:\Dropbox\Code\Yabo\JScript\Yabo.js $FilePath$",
 	"Working directory":"$FileDir$"
 
 要改的就是 Yabo.js 的路径,
