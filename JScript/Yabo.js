@@ -5,7 +5,7 @@
  Settings > External Tools >
  {
  "Program":"wscript.exe",
- "Parameters":"E:\Dropbox\Code\Yabo\Yabo.js $FilePath$ $FileName$",
+ "Parameters":"E:\Dropbox\Code\Yabo\Yabo.js $FilePath$",
  "Working directory":"$FileDir$"
  }
 
