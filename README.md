@@ -32,7 +32,11 @@ Yabo
 	"Parameters":"E:\Dropbox\Code\Yabo\JScript\Yabo.js $FilePath$ $FileName$",
 	"Working directory":"$FileDir$"
 
-要改的就是 Yabo.js 的路径
+要改的就是 Yabo.js 的路径,
+
+$FilePath$ $FileName$ $FileDir$ 都是编辑器自动生成
+
+对应 E:\Yabo\Yabo.css Yabo.css E:\Yabo
 
 ###使用
 在需要压缩的 CSS 文件内右键选择 Yabo.js

@@ -5,17 +5,26 @@
  Settings > External Tools >
  {
  "Program":"wscript.exe",
- "Parameters":"E:\Dropbox\Code\Yabo\Yabo.js E:\Dropbox\Code\yuicompressor-master\build\yuicompressor-2.4.8pre.jar $FilePath$ $FileName$",
+ "Parameters":"E:\Dropbox\Code\Yabo\Yabo.js $FilePath$ $FileName$",
  "Working directory":"$FileDir$"
  }
 
- replace Yabo.js with your path;
+ replace "E:\Dropbox\Code\Yabo\Yabo.js" with your Yabo path;
 
  special vars:
- Yabo_img_timestamp_off
+
  */
 
 var regex_timestamp = /\.(png|jpg)/g; /*定义需要加时间戳的图片后缀*/
+var Yabo_img_timestamp = true;/*默认全局图片加时间戳*/
+// css文件里如果有 Yabo_img_timestamp_off 关键词,就会针对性关闭
+
+
+
+
+//上面随便玩
+//下面不是给你吃的
+
 
 var fso = new ActiveXObject("Scripting.FileSystemObject");
 var WshShell = WScript.CreateObject("WScript.Shell");
@@ -23,9 +32,12 @@ var oShell = WScript.CreateObject("WScript.Shell");
 var ForReading = 1, ForWriting = 2;
 var strScriptPath = WScript.ScriptFullName;
 var strScriptName = WScript.ScriptName;
-var strGetScriptPath = strScriptPath.replace(strScriptName, "");
-var strCombo = "";
 var timestamp = new Date();
+
+var strGetScriptPath = strScriptPath.replace(strScriptName, "");
+var strYUIPath = strGetScriptPath+'yuicompressor-2.4.8pre.jar';
+
+var strCombo = "";
 
 var args = WScript.Arguments;
 if (args.Count() == 0) {
@@ -33,9 +45,8 @@ if (args.Count() == 0) {
     WScript.Quit();
 }
 
-var strYUIPath = strGetScriptPath+'yuicompressor-2.4.8pre.jar';
 var strFilePath = args(0);
-var strFileName = args(1);
+var strFileName = strFilePath.match(/[^\\]*\.css$/)[0];
 if(strFileName.match(/\.source/)){
     strFileName = strFileName.replace(".source","");
 }else{
@@ -75,10 +86,15 @@ if (arrayImportFileList != null) {
 }
 
 strCombo += fileSourceContent.replace(/@import.*?;/g, "");
-
-if(!fileSourceContent.match(/Yabo_img_timestamp_off/g)){
+WScript.Echo(Yabo_img_timestamp);
+if(fileSourceContent.match(/Yabo_img_timestamp_off/g)){
+    Yabo_img_timestamp=false;
+}
+WScript.Echo(Yabo_img_timestamp);
+if(Yabo_img_timestamp){
     strCombo = strCombo.replace(regex_timestamp, ".$1?" + timestamp);
 }
+
 strCombo += yabo_timestamp;
 strCombo=strCombo.replace(/\r\s/g, ""); //搞成一行好办事
 strCombo=strCombo.replace(/\/\*.*?[\*\?]\//g, ""); //干掉非正常注释
