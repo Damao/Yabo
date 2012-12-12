@@ -97,11 +97,11 @@ IDEA中的配置
 * Initial directory参数需要设置为$(FileDir)  
 * $FilePath$ $FileDir$ 可以通过编辑器选项自动生成  
 
-![EditPlus相关设置](img/yabo-editplus.png)
+![EditPlus相关设置](http://seektan.github.com/img/yabo-editplus.png)
 
 
 ###使用
 1. 快捷键(默认ctrl+数字，Yabo是你的第N个工具数字即为N，可keyboard菜单选项中修改)
 2. 直接点击菜单tools中的定义好的Yabo
 
-![EditPlus相关设置](img/yabo-editplus-go.png)
+![EditPlus相关设置](http://seektan.github.com/img/yabo-editplus-go.png)
