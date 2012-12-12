@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Yabo by damao</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Yabo</h1>
+        <h2>鸭脖(压缩 &amp;&amp; Combo )</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/damao/Yabo/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/damao/Yabo/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/damao/Yabo" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>Yabo</h1>
+
+<p>鸭脖 ( CSS 压缩 &amp;&amp; Combo )</p>
+
+<h3>Version</h3>
+
+<ul>
+<li>12.11.20 集成 YUI compressor|修正中文编码问题</li>
+<li>12.11.19 增加图片时间戳开关</li>
+</ul><h3>前世今生</h3>
+
+<p><a href="https://github.com/nqdeng/YCombo">Ycombo</a> 可以合并 CSS / JavaScript 并且基于 <a href="https://github.com/yui/yuicompressor">YUI Compressor</a> 压缩</p>
+
+<p>但必须要有一个合并列表文件,称之为 seed. 并且不方便无服务器端的本地开发.</p>
+
+<p>所以 Yabo 应运而生</p>
+
+<h3>功能点</h3>
+
+<ul>
+<li>无需单独的合并列表文件,直接读取 CSS 里的 <a href="https://github.com/import" class="user-mention">@import</a> 文件合并</li>
+<li>合并后自动调用 YUI Compressor 进行压缩,filename.source.css 进去 出来 filename.css || filename.css 进去 出来 filename.min.css</li>
+<li>给图片加时间戳, 包含关键词 Yabo_img_timestamp_off 来关闭此功能</li>
+<li>给文件结尾加时间戳</li>
+</ul><h3>安装</h3>
+
+<ol>
+<li>下载 <a href="https://github.com/damao/Yabo/downloads">Yabo</a>
+</li>
+<li>编辑器里配置外部工具,这里用 <a href="https://github.com/damao/Intellij-IDEA-F2E">Intellij IDEA</a> 举例,当然同样适用于 PHPStorm 和其他支持传参的编辑器</li>
+</ol><p>例如
+    Settings &gt; External Tools</p>
+
+<pre><code>"Program":"wscript",
+"Parameters":"E:\Dropbox\Code\Yabo\JScript\Yabo.js $FilePath$",
+"Working directory":"$FileDir$"
+</code></pre>
+
+<p>要改的就是 Yabo.js 的路径,</p>
+
+<p>$FilePath$ $FileDir$ 都是编辑器自动生成</p>
+
+<p>对应 E:\source\source.css E:\source</p>
+
+<h3>使用</h3>
+
+<p>在需要压缩的 CSS 文件内右键选择 Yabo.js</p>
+
+<p>就会在同目录下生成当前文件.min.css</p>
+
+<p><a href="http://ooxx.me/yabo.orz">图文教程演示</a></p>
+
+<h3>运行环境</h3>
+
+<p>目前是 JScript 写的,只能运行在 windows 下</p>
+
+<h3>JAR版</h3>
+
+<p>JAR 需要 JAVA 环境支持，请确保已经安装好JDK，在命令行中可以正常运行  java -version</p>
+
+<p>参数说明：</p>
+
+<pre><code>-h --help 显示帮助
+-f --file CSS文件，允许绝对路径或JAR包的相对路径。压缩后以 文件名.min.css 保存
+</code></pre>
+
+<p>在命令行中运行，例：</p>
+
+<pre><code>java -jar yabo-1.0.jar style.css
+</code></pre>
+
+<p>IDEA中的配置</p>
+
+<pre><code>"Program":"$JDKPath$\bin\java.exe",
+"Parameters":"-jar yabo-1.0.jar -f $FilePath$",
+"Working directory":"E:\dropbox\code\Yabo\java\build\"
+</code></pre>
+
+<p>目前 jar 版与 JScript 在细节处理上还有一些差别，以后会保持一致。</p>
+
+<h3>todo</h3>
+
+<ul>
+<li>目录遍历压缩功能还木实现</li>
+<li>不支持JS合并(貌似也没好办法搞)</li>
+</ul><hr><h2>EditPlus 相关设置</h2>
+
+<h3>部署Yabo脚本</h3>
+
+<ul>
+<li>下载 <a href="https://github.com/damao/Yabo/downloads">Yabo</a>
+</li>
+<li>把JScript目录下的两个文件拷贝到你的硬盘(比如d:/Yabo/)<br>
+</li>
+</ul><h3>编辑器里配置外部工具</h3>
+
+<pre><code>菜单选项：  
+Tools &gt; Preferences &gt; Tools &gt; User tools &gt; add Tool
+
+参数设置：  
+Menu text : Yabo  
+Command ： WScript.exe  
+Argument : d:/Yabo/Yabo.js $(FilePath)  
+Initial directory : $(FileDir)  
+</code></pre>
+
+<ul>
+<li>Argument参数的文件路径为你存放Yabo.js的路径，Yabo.js和yuicompressor-2.4.8pre.jar这两个文件需要放在同一目录<br>
+</li>
+<li>Initial directory参数需要设置为$(FileDir)<br>
+</li>
+<li>$FilePath$ $FileDir$ 可以通过编辑器选项自动生成<br>
+</li>
+</ul><p><img src="http://seektan.github.com/img/yabo-editplus.png" alt="EditPlus相关设置"></p>
+
+<h3>使用</h3>
+
+<ol>
+<li>快捷键(默认ctrl+数字，Yabo是你的第N个工具数字即为N，可keyboard菜单选项中修改)</li>
+<li>直接点击菜单tools中的定义好的Yabo</li>
+</ol><p><img src="http://seektan.github.com/img/yabo-editplus-go.png" alt="EditPlus相关设置"></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
