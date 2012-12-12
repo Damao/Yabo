@@ -73,3 +73,35 @@ IDEA中的配置
 ###todo
 * 目录遍历压缩功能还木实现
 * 不支持JS合并(貌似也没好办法搞)
+
+
+* * *
+##EditPlus 相关设置
+
+###部署Yabo脚本
+ + 下载 [Yabo](https://github.com/damao/Yabo/downloads)
+ + 把JScript目录下的两个文件拷贝到你的硬盘(比如d:/Yabo/)  
+
+
+###编辑器里配置外部工具
+    菜单选项：  
+    Tools > Preferences > Tools > User tools > add Tool
+
+    参数设置：  
+    Menu text : Yabo  
+    Command ： WScript.exe  
+    Argument : d:/Yabo/Yabo.js $(FilePath)  
+    Initial directory : $(FileDir)  
+  
+* Argument参数的文件路径为你存放Yabo.js的路径，Yabo.js和yuicompressor-2.4.8pre.jar这两个文件需要放在同一目录  
+* Initial directory参数需要设置为$(FileDir)  
+* $FilePath$ $FileDir$ 可以通过编辑器选项自动生成  
+
+![EditPlus相关设置](http://seektan.github.com/img/yabo-editplus.png)
+
+
+###使用
+1. 快捷键(默认ctrl+数字，Yabo是你的第N个工具数字即为N，可keyboard菜单选项中修改)
+2. 直接点击菜单tools中的定义好的Yabo
+
+![EditPlus相关设置](http://seektan.github.com/img/yabo-editplus-go.png)
