@@ -1,5 +1,5 @@
 /*
- Yabo (鸭脖) Version 12.11.26
+ Yabo (鸭脖) Version 13.2.4
  @author BigCat
  Intellij IDEA / PHPStorm / WebStrom
  Settings > External Tools >
@@ -76,11 +76,11 @@ fileSourceContent = fileSourceContent.replace(/\r\s/g, ""); //搞成一行好办
 fileSourceContent = fileSourceContent.replace(/\/\*.*?[\*\?]\//g, ""); //去掉注释先,避免注释里有 @import
 //诡异去注释正则的故事,因为以ASCII读取的时候,中文后面跟着菊花*,会变成问号,例如 /*中文*/ 就会变成 /*中�?/
 
-var arrayImportFileList = fileSourceContent.match(/@import url\("?.*?\.css"?\)/g);
+var arrayImportFileList = fileSourceContent.match(/@import url\(["|']?.*?\.css["|']?\)/g);
 
 if (arrayImportFileList != null) {
     for (var i = 0; i < arrayImportFileList.length; i++) {
-        arrayImportFileList[i] = arrayImportFileList[i].replace(/@import url\("?(.*?\.css)"?\)/g, "$1"); //干掉import语句
+        arrayImportFileList[i] = arrayImportFileList[i].replace(/@import url\(["|']?(.*?\.css)["|']?\)/g, "$1"); //干掉import语句
         strCombo += getFileContent(arrayImportFileList[i]);
     }
 }

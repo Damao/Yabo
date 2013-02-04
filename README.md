@@ -4,6 +4,7 @@ Yabo
 鸭脖 ( CSS 压缩 &amp;&amp; Combo )
 
 ###Version
+* 13.2.4 @import url 支持 " ' 和空
 * 12.11.20 集成 YUI compressor|修正中文编码问题
 * 12.11.19 增加图片时间戳开关
 
